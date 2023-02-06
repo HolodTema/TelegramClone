@@ -35,6 +35,8 @@ android {
 }
 
 dependencies {
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
     implementation "com.mikepenz:materialdrawer:7.0.0"
     //required support lib modules
     implementation "androidx.recyclerview:recyclerview:1.1.0"
