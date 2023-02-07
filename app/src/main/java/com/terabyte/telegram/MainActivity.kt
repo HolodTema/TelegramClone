@@ -1,8 +1,10 @@
 package com.terabyte.telegram
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.terabyte.telegram.activities.RegisterActivity
 import com.terabyte.telegram.databinding.ActivityMainBinding
 import com.terabyte.telegram.ui.fragments.ChatsFragment
 import com.terabyte.telegram.ui.objects.AppDrawer
@@ -25,11 +27,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFunc() {
-        setSupportActionBar(mToolbar)
-        mAppDrawer.create()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.constraintDataContainer, ChatsFragment())
-            .commit()
+        if(false) {
+            setSupportActionBar(mToolbar)
+            mAppDrawer.create()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.constraintDataContainer, ChatsFragment())
+                .commit()
+        }
+        else {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun initFields() {

@@ -20,4 +20,12 @@
     <string name="press_to_change_login">Press to change your login</string>
     <string name="about_oneself">About oneself</string>
     <string name="write_about_oneself">Write something about oneself a bit</string>
+    <string name="change_name">Change name</string>
+    <string name="exit">Exit</string>
+    <string name="register_image">Enter a code</string>
+    <string name="enter_code">Enter a code</string>
+    <string name="we_sent_sms_to_you">We sent a SMS with a code to you. Please, check it.</string>
+    <string name="register_hint_default_code">- - - - - -</string>
+    <string name="your_phone">Your phone</string>
+    <string name="enter_correct_phone_number">Enter a corrent phone number!</string>
 </resources>
