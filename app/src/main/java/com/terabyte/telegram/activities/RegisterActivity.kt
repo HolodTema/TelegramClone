@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar
 import com.terabyte.telegram.R
 import com.terabyte.telegram.databinding.ActivityRegisterBinding
 import com.terabyte.telegram.ui.fragments.EnterPhoneNumberFragment
+import com.terabyte.telegram.utilits.replaceFragment
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityRegisterBinding
@@ -22,8 +23,6 @@ class RegisterActivity : AppCompatActivity() {
         mToolbar = mBinding.toolbarRegister
         setSupportActionBar(mToolbar)
         title = getString(R.string.your_phone)
-        supportFragmentManager.beginTransaction()
-            .add(R.id.constraintDataContainer, EnterPhoneNumberFragment())
-            .commit()
+        replaceFragment(EnterPhoneNumberFragment())
     }
 }

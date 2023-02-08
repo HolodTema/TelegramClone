@@ -14,6 +14,7 @@ import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 import com.terabyte.telegram.R
 import com.terabyte.telegram.ui.fragments.SettingsFragment
+import com.terabyte.telegram.utilits.replaceFragment
 
 class AppDrawer(private val mainActivity: AppCompatActivity, private val toolbar: Toolbar) {
     private lateinit var mDrawer: Drawer
@@ -102,10 +103,8 @@ class AppDrawer(private val mainActivity: AppCompatActivity, private val toolbar
                     Toast.makeText(mainActivity, position.toString(), Toast.LENGTH_SHORT).show()
                     when(position) {
                         7 -> {
-                            mainActivity.supportFragmentManager.beginTransaction()
-                                .addToBackStack(null)
-                                .replace(R.id.constraintDataContainer, SettingsFragment())
-                                .commit()
+                            mainActivity.replaceFragment(SettingsFragment())
+
                         }
                     }
                     return false

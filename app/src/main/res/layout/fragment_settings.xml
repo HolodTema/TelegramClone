@@ -26,7 +26,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
         <TextView
-            android:id="@+id/textSettingsUserName"
+            android:id="@+id/textSettingsFullName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="?attr/colorOnPrimary"
@@ -46,7 +46,7 @@
             android:text="@string/online"
             app:layout_constraintStart_toEndOf="@id/photoSettingsUser"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textSettingsUserName"
+            app:layout_constraintTop_toBottomOf="@id/textSettingsFullName"
             android:layout_marginStart="@dimen/horizontal_margin"
             android:textSize="@dimen/text_small"/>
 
@@ -101,22 +101,22 @@
         style="@style/button_settings">
 
         <TextView
-            android:id="@+id/textSettingsLogin"
+            android:id="@+id/textSettingsUsername"
             android:text="@string/login_default"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             style="@style/text_normal" />
 
         <TextView
-            android:id="@+id/textSettingsChangeLogin"
+            android:id="@+id/textSettingsChangeUsername"
             android:text="@string/press_to_change_login"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textSettingsLogin"
+            app:layout_constraintTop_toBottomOf="@id/textSettingsUsername"
             style="@style/text_small" />
         <View
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textSettingsChangeLogin"
+            app:layout_constraintTop_toBottomOf="@id/textSettingsChangeUsername"
             style="@style/separator" />
 
 

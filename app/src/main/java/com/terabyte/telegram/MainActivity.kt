@@ -8,6 +8,8 @@ import com.terabyte.telegram.activities.RegisterActivity
 import com.terabyte.telegram.databinding.ActivityMainBinding
 import com.terabyte.telegram.ui.fragments.ChatsFragment
 import com.terabyte.telegram.ui.objects.AppDrawer
+import com.terabyte.telegram.utilits.replaceActivity
+import com.terabyte.telegram.utilits.replaceFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityMainBinding
@@ -27,16 +29,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFunc() {
-        if(false) {
+        if(true) {
             setSupportActionBar(mToolbar)
             mAppDrawer.create()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.constraintDataContainer, ChatsFragment())
-                .commit()
+            replaceFragment(ChatsFragment())
         }
         else {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
+            replaceActivity(RegisterActivity())
         }
 
     }
