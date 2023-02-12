@@ -55,5 +55,7 @@
         <item name="android:layout_marginTop">@dimen/vertical_margin</item>
         <item name="android:padding">@dimen/appPadding</item>
         <item name="android:inputType">phone</item>
+        <item name="android:backgroundTint">?attr/colorPrimary</item>
+        <item name="android:textColorHint">?attr/colorGrey</item>
     </style>
 </resources>

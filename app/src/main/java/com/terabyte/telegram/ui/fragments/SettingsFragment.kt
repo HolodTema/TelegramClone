@@ -2,7 +2,12 @@ package com.terabyte.telegram.ui.fragments
 
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
+import com.terabyte.telegram.MainActivity
 import com.terabyte.telegram.R
+import com.terabyte.telegram.activities.RegisterActivity
+import com.terabyte.telegram.utilits.AUTH
+import com.terabyte.telegram.utilits.replaceActivity
 
 class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
 
@@ -13,5 +18,15 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         activity?.menuInflater?.inflate(R.menu.menu_settings_action, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.menu_settings_exit -> {
+                AUTH.signOut()
+                (activity as MainActivity).replaceActivity(RegisterActivity())
+            }
+        }
+        return true
     }
 }

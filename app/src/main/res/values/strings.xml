@@ -28,4 +28,6 @@
     <string name="register_hint_default_code">- - - - - -</string>
     <string name="your_phone">Your phone</string>
     <string name="enter_correct_phone_number">Enter a corrent phone number!</string>
+    <string name="welcome">Welcome to Telegram!</string>
+    <string name="enter_your_phone_with_character_in_start">enter your phone with \'+\' character in start.</string>
 </resources>
