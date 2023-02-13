@@ -1,33 +1,33 @@
-  {
+{
   "project_info": {
-    "project_number": "712315209999",
-    "project_id": "telegramclone-46bbc",
-    "storage_bucket": "telegramclone-46bbc.appspot.com"
+    "project_number": "636349066276",
+    "project_id": "telegram-377713",
+    "storage_bucket": "telegram-377713.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:712315209999:android:b92557cca22e4ba467967a",
+        "mobilesdk_app_id": "1:636349066276:android:6e02e4bab25980c0177cb1",
         "android_client_info": {
           "package_name": "com.terabyte.telegram"
         }
       },
       "oauth_client": [
         {
-          "client_id": "712315209999-uskbn70g0cll0alo4hhip2o49jas5f8u.apps.googleusercontent.com",
+          "client_id": "636349066276-7u8e56fvpgdrnu726aikqcqnbc0kaoa3.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDAAx7eZuHp_JBVqsEjQaC8LH8PePbLrKA"
+          "current_key": "AIzaSyAh_ML6Y6rxo4lswp7Tg5W2SFBmZTTsj10"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "712315209999-uskbn70g0cll0alo4hhip2o49jas5f8u.apps.googleusercontent.com",
+              "client_id": "636349066276-7u8e56fvpgdrnu726aikqcqnbc0kaoa3.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

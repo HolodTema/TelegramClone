@@ -10,6 +10,7 @@ import com.terabyte.telegram.databinding.ActivityMainBinding
 import com.terabyte.telegram.ui.fragments.ChatsFragment
 import com.terabyte.telegram.ui.objects.AppDrawer
 import com.terabyte.telegram.utilits.AUTH
+import com.terabyte.telegram.utilits.initFirebase
 import com.terabyte.telegram.utilits.replaceActivity
 import com.terabyte.telegram.utilits.replaceFragment
 
@@ -46,6 +47,6 @@ class MainActivity : AppCompatActivity() {
     private fun initFields() {
         mToolbar = mBinding.toolbarMain
         mAppDrawer = AppDrawer(this, mToolbar)
-        AUTH = FirebaseAuth.getInstance()
+        initFirebase()
     }
 }
