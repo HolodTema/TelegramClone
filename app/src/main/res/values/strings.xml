@@ -30,4 +30,8 @@
     <string name="enter_correct_phone_number">Enter a corrent phone number!</string>
     <string name="welcome">Welcome to Telegram!</string>
     <string name="enter_your_phone_with_character_in_start">enter your phone with \'+\' character in start.</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="enter_your_surname">Enter your surname</string>
+    <string name="name_can_not_be_empty">The name can\'t be empty</string>
+    <string name="all_data_has_been_updated">All data has been updated.</string>
 </resources>

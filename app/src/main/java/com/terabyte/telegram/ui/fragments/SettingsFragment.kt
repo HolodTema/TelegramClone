@@ -8,6 +8,7 @@ import com.terabyte.telegram.R
 import com.terabyte.telegram.activities.RegisterActivity
 import com.terabyte.telegram.utilits.AUTH
 import com.terabyte.telegram.utilits.replaceActivity
+import com.terabyte.telegram.utilits.replaceFragment
 
 class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
 
@@ -25,6 +26,9 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
             R.id.menu_settings_exit -> {
                 AUTH.signOut()
                 (activity as MainActivity).replaceActivity(RegisterActivity())
+            }
+            R.id.menu_settings_change_name -> {
+                replaceFragment(ChangeNameFragment())
             }
         }
         return true
