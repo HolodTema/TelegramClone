@@ -30,7 +30,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="?attr/colorOnPrimary"
-            android:text="@string/user_default"
+            tools:text="@string/user_default"
             app:layout_constraintStart_toEndOf="@id/photoSettingsUser"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/photoSettingsUser"
@@ -43,7 +43,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="?attr/colorOnPrimaryDark"
-            android:text="@string/online"
+            tools:text="@string/online"
             app:layout_constraintStart_toEndOf="@id/photoSettingsUser"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textSettingsFullName"
@@ -73,7 +73,7 @@
 
         <TextView
             android:id="@+id/textSettingsPhoneNumber"
-            android:text="@string/phone_number_default"
+            tools:text="@string/phone_number_default"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             style="@style/text_normal" />
@@ -102,7 +102,7 @@
 
         <TextView
             android:id="@+id/textSettingsUsername"
-            android:text="@string/login_default"
+            tools:text="@string/login_default"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             style="@style/text_normal" />
@@ -131,7 +131,7 @@
 
         <TextView
             android:id="@+id/textSettingsBio"
-            android:text="@string/about_oneself"
+            tools:text="@string/about_oneself"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             style="@style/text_normal" />
