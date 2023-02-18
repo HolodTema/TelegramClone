@@ -10,28 +10,17 @@ import com.terabyte.telegram.utilits.*
 import kotlinx.android.synthetic.main.fragment_change_username.*
 import java.util.*
 
-class ChangeUsernameFragment : BaseFragment(R.layout.fragment_change_username) {
+class ChangeUsernameFragment : BaseChangeFragment(R.layout.fragment_change_username) {
     lateinit var newUserName: String
 
     override fun onResume() {
         super.onResume()
         //this method allows fragment to create own menu in actionBar
-        setHasOptionsMenu(true)
         edit_settings_username.setText(USER.username)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        (activity as MainActivity).menuInflater.inflate(R.menu.menu_settings_confirm, menu)
-    }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
-            R.id.menu_settings_confirm_change -> changeUsername()
-        }
-        return true
-    }
-
-    private fun changeUsername() {
+    override fun change() {
         newUserName = edit_settings_username.text.toString().lowercase(Locale.getDefault())
         if(newUserName.isEmpty()) showToast(getString(R.string.username_can_not_be_empty))
         else {

@@ -10,11 +10,13 @@ import com.terabyte.telegram.utilits.*
 import kotlinx.android.synthetic.main.fragment_change_name.*
 
 
-class ChangeNameFragment : BaseFragment(R.layout.fragment_change_name) {
+class ChangeNameFragment : BaseChangeFragment(R.layout.fragment_change_name) {
 
     override fun onResume() {
         super.onResume()
-        setHasOptionsMenu(true)
+    }
+
+    private fun initFullNameListAndFullNameUI() {
         val fullNameList = USER.fullName.split(" ")
         if(fullNameList.size>1) {
             edit_settings_change_name.setText(fullNameList[0])
@@ -23,21 +25,10 @@ class ChangeNameFragment : BaseFragment(R.layout.fragment_change_name) {
         else {
             edit_settings_change_name.setText(fullNameList[0])
         }
-
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        (activity as MainActivity).menuInflater.inflate(R.menu.menu_settings_confirm, menu)
-    }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
-            R.id.menu_settings_confirm_change -> changeNameAndSurname()
-        }
-        return true
-    }
-
-    private fun changeNameAndSurname() {
+    override fun change() {
         val name = edit_settings_change_name.text.toString()
         val surname = edit_settings_change_surname.text.toString()
         if(name.isEmpty()) {
