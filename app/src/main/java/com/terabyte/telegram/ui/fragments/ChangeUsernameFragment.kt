@@ -1,10 +1,5 @@
 package com.terabyte.telegram.ui.fragments
 
-import android.os.Bundle
-import android.view.*
-import androidx.fragment.app.Fragment
-import androidx.navigation.ui.AppBarConfiguration
-import com.terabyte.telegram.MainActivity
 import com.terabyte.telegram.R
 import com.terabyte.telegram.utilits.*
 import kotlinx.android.synthetic.main.fragment_change_username.*
@@ -35,7 +30,7 @@ class ChangeUsernameFragment : BaseChangeFragment(R.layout.fragment_change_usern
     }
 
     private fun updateUsernameInNodeUsernames() {
-        REF_DATABASE_ROOT.child(NODE_USERNAMES).child(newUserName).setValue(UID)
+        REF_DATABASE_ROOT.child(NODE_USERNAMES).child(newUserName).setValue(CURRENT_UID)
             .addOnCompleteListener {
                 if(it.isSuccessful) {
                     updateUsernameInNodeUsers()
@@ -44,7 +39,7 @@ class ChangeUsernameFragment : BaseChangeFragment(R.layout.fragment_change_usern
     }
 
     private fun updateUsernameInNodeUsers() {
-        REF_DATABASE_ROOT.child(NODE_USERS).child(UID).child(CHILD_USERNAME)
+        REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID).child(CHILD_USERNAME)
             .setValue(newUserName)
             .addOnCompleteListener {
                 if(it.isSuccessful) {

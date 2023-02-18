@@ -5,10 +5,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.terabyte.telegram.R
-import com.terabyte.telegram.ui.fragments.ChatsFragment
 
-fun Fragment.showToast(message: String) {
-    Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+fun showToast(message: String) {
+    Toast.makeText(APP_ACTIVITY, message, Toast.LENGTH_SHORT).show()
 }
 
 fun AppCompatActivity.replaceActivity(activity: AppCompatActivity) {

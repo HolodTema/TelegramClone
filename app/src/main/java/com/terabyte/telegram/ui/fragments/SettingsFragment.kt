@@ -1,16 +1,15 @@
 package com.terabyte.telegram.ui.fragments
 
+import android.app.Activity.RESULT_OK
+import android.content.Intent
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import com.terabyte.telegram.MainActivity
 import com.terabyte.telegram.R
 import com.terabyte.telegram.activities.RegisterActivity
-import com.terabyte.telegram.models.User
-import com.terabyte.telegram.utilits.AUTH
-import com.terabyte.telegram.utilits.USER
-import com.terabyte.telegram.utilits.replaceActivity
-import com.terabyte.telegram.utilits.replaceFragment
+import com.terabyte.telegram.utilits.*
+import com.theartofdev.edmodo.cropper.CropImage
+import com.theartofdev.edmodo.cropper.CropImageView
 import kotlinx.android.synthetic.main.fragment_settings.*
 
 class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
@@ -33,17 +32,28 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
         constraintSettingsChangeBio.setOnClickListener {
             replaceFragment(ChangeBioFragment())
         }
+        photoSettingsChangePhoto.setOnClickListener {
+            changeUserPhoto()
+        }
     }
+
+    private fun changeUserPhoto() {
+        CropImage.activity().setAspectRatio(1, 1) //for cropper were like a square with sides a = b
+            .setRequestedSize(600, 600) //max size of image, to decrease traffic to server
+            .setCropShape(CropImageView.CropShape.OVAL).start(APP_ACTIVITY)
+    }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         activity?.menuInflater?.inflate(R.menu.menu_settings_action, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
+        when (item.itemId) {
             R.id.menu_settings_exit -> {
                 AUTH.signOut()
-                (activity as MainActivity).replaceActivity(RegisterActivity())
+                APP_ACTIVITY.replaceActivity(RegisterActivity())
             }
             R.id.menu_settings_change_name -> {
                 replaceFragment(ChangeNameFragment())
