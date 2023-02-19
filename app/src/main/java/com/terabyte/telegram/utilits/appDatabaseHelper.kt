@@ -19,7 +19,8 @@ const val CHILD_ID = "id"
 const val CHILD_PHONE = "phone"
 const val CHILD_USERNAME = "username"
 const val CHILD_FULL_NAME = "fullName"
-const val CHILD_BIO = "childBio"
+const val CHILD_BIO = "bio"
+const val CHILD_PHOTO_URL = "photoUrl"
 
 const val FOLDER_PROFILE_IMAGE = "profile_image"
 
