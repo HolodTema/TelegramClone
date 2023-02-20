@@ -1,11 +1,13 @@
 package com.terabyte.telegram.utilits
 
 import android.net.Uri
+import android.provider.ContactsContract
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import com.terabyte.telegram.models.CommonModel
 import com.terabyte.telegram.models.User
 
 lateinit var AUTH: FirebaseAuth
@@ -77,4 +79,32 @@ inline fun initUser(crossinline function: () -> Unit) {
             }
             function()
         })
+}
+
+fun initContacts() {
+    if(checkPermissions(READ_CONTACTS)) {
+        var arrayContacts = arrayListOf<CommonModel>()
+        val cursor = APP_ACTIVITY.contentResolver.query(
+            ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+            null,
+            null,
+            null,
+            null
+        )
+        cursor?.let { it ->//let built-in kotlin lambda will work only if object isn't null
+            while(it.moveToNext()) {
+                val fullName = it
+                    .getString(it.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME))
+                val phone = it
+                    .getString(it.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))
+                val newModel = CommonModel()
+                newModel.fullName = fullName
+                newModel.phone = phone.replace(Regex("[\\s,-]"), "")
+                arrayContacts.add(newModel)
+            }
+        }
+        cursor?.close()
+
+    }
+
 }

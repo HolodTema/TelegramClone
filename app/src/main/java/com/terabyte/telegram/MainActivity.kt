@@ -42,15 +42,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun initContacts() {
-        if(checkPermissions(READ_CONTACTS)) {
-            //showToast(getString(R.string.reading_contacts))
-            //imitate hard operation
-            val array = arrayOfNulls<Int>(1000000)
-            array.forEach { println(it) }
-        }
 
-    }
 
     private fun initFunc() {
         if(AUTH.currentUser!=null) {
