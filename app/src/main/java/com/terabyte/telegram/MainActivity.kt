@@ -16,6 +16,10 @@ import com.terabyte.telegram.ui.fragments.ChatsFragment
 import com.terabyte.telegram.ui.objects.AppDrawer
 import com.terabyte.telegram.utilits.*
 import com.theartofdev.edmodo.cropper.CropImage
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityMainBinding
@@ -30,7 +34,9 @@ class MainActivity : AppCompatActivity() {
         APP_ACTIVITY = this
         initFirebase()
         initUser {
-            initContacts()
+            CoroutineScope(Dispatchers.IO).launch {
+                initContacts()
+            }
             initFields()
             initFunc()
         }
@@ -38,7 +44,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun initContacts() {
         if(checkPermissions(READ_CONTACTS)) {
-            showToast(getString(R.string.reading_contacts))
+            //showToast(getString(R.string.reading_contacts))
+            //imitate hard operation
+            val array = arrayOfNulls<Int>(1000000)
+            array.forEach { println(it) }
         }
 
     }
