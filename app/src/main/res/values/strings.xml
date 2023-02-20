@@ -37,4 +37,5 @@
     <string name="enter_your_username">Enter your username</string>
     <string name="username_can_not_be_empty">Username can\'t be empty.</string>
     <string name="such_username_is_already_busy">Such username is already busy.</string>
+    <string name="reading_contacts">reading contacts...</string>
 </resources>
