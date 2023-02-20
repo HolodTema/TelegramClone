@@ -2,13 +2,9 @@ package com.terabyte.telegram.ui.fragments
 
 import android.app.Activity.RESULT_OK
 import android.content.Intent
-import android.net.Uri
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import com.google.firebase.storage.StorageReference
-import com.mikepenz.materialdrawer.icons.MaterialDrawerFont.url
-import com.squareup.picasso.Picasso
 import com.terabyte.telegram.R
 import com.terabyte.telegram.activities.RegisterActivity
 import com.terabyte.telegram.utilits.*
@@ -28,7 +24,7 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
         textSettingsBio.text = USER.bio
         textSettingsFullName.text = USER.fullName
         textSettingsPhoneNumber.text = USER.phone
-        textSettingsUserStatus.text = USER.status
+        textSettingsUserStatus.text = USER.state
         textSettingsUsername.text = USER.username
         constraintSettingsChangeLogin.setOnClickListener {
             replaceFragment(ChangeUsernameFragment())

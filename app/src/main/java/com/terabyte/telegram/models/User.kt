@@ -5,7 +5,8 @@ data class User(
     var username: String = "",
     var bio: String = "",
     var fullName: String = "",
-    var status: String = "",
+    var state: String = "",
     var phone: String = "",
-    var photoUrl: String = ""
+    var photoUrl: String = "empty" //Picasso can't read an empty url, we need to put some
+//text here.
 )
