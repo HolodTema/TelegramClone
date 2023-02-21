@@ -9,6 +9,7 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.terabyte.telegram.models.CommonModel
 import com.terabyte.telegram.models.User
+import java.util.ArrayList
 
 lateinit var AUTH: FirebaseAuth
 lateinit var CURRENT_UID: String
@@ -18,6 +19,8 @@ lateinit var USER: User
 
 const val NODE_USERS = "users"
 const val NODE_USERNAMES = "usernames"
+const val NODE_PHONES = "phones"
+const val NODE_PHONES_CONTACTS = "phoneContacts"
 const val CHILD_ID = "id"
 const val CHILD_PHONE = "phone"
 const val CHILD_USERNAME = "username"
@@ -104,7 +107,25 @@ fun initContacts() {
             }
         }
         cursor?.close()
-
+        updatePhonesToDatabase(arrayContacts)
     }
 
+}
+
+fun updatePhonesToDatabase(arrayContacts: ArrayList<CommonModel>) {
+    REF_DATABASE_ROOT.child(NODE_PHONES).addListenerForSingleValueEvent(AppValueEventListener{
+        it.children.forEach { snapshot ->
+            arrayContacts.forEach { contact ->
+                if(snapshot.key==contact.phone) {
+                    REF_DATABASE_ROOT.child(NODE_PHONES_CONTACTS).child(CURRENT_UID)
+                        .child(snapshot.value.toString())
+                        .setValue(snapshot.value.toString())
+                        .addOnFailureListener {
+                            showToast(it.message.toString())
+                        }
+                        
+                }
+            }
+        }
+    })
 }
