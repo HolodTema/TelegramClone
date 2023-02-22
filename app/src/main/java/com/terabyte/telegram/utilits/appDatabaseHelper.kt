@@ -3,6 +3,7 @@ package com.terabyte.telegram.utilits
 import android.net.Uri
 import android.provider.ContactsContract
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -119,6 +120,7 @@ fun updatePhonesToDatabase(arrayContacts: ArrayList<CommonModel>) {
                 if(snapshot.key==contact.phone) {
                     REF_DATABASE_ROOT.child(NODE_PHONES_CONTACTS).child(CURRENT_UID)
                         .child(snapshot.value.toString())
+                        .child(CHILD_ID)
                         .setValue(snapshot.value.toString())
                         .addOnFailureListener {
                             showToast(it.message.toString())
@@ -129,3 +131,6 @@ fun updatePhonesToDatabase(arrayContacts: ArrayList<CommonModel>) {
         }
     })
 }
+
+fun DataSnapshot.getCommonModel(): CommonModel =
+    this.getValue(CommonModel::class.java)?: CommonModel()

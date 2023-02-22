@@ -23,6 +23,7 @@
         android:id="@+id/text_contact_full_name" />
 
     <TextView
+        android:id="@+id/text_contact_status"
         style="@style/text_small"
         tools:text="online"
         app:layout_constraintStart_toEndOf="@id/photo_contact"
