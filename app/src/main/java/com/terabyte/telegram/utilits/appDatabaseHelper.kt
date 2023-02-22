@@ -123,7 +123,7 @@ fun updatePhonesToDatabase(arrayContacts: ArrayList<CommonModel>) {
                         .addOnFailureListener {
                             showToast(it.message.toString())
                         }
-                        
+
                 }
             }
         }

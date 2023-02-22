@@ -19,12 +19,11 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 import com.mikepenz.materialdrawer.util.AbstractDrawerImageLoader
 import com.mikepenz.materialdrawer.util.DrawerImageLoader
 import com.terabyte.telegram.R
+import com.terabyte.telegram.ui.fragments.ContactsFragment
 import com.terabyte.telegram.ui.fragments.SettingsFragment
-import com.terabyte.telegram.utilits.USER
-import com.terabyte.telegram.utilits.downloadAndSetImage
-import com.terabyte.telegram.utilits.replaceFragment
+import com.terabyte.telegram.utilits.*
 
-class AppDrawer(private val mainActivity: AppCompatActivity, private val toolbar: Toolbar) {
+class AppDrawer() {
     private lateinit var mDrawer: Drawer
     private lateinit var mHeader: AccountHeader
     private lateinit var mDrawerLayout: DrawerLayout
@@ -39,26 +38,26 @@ class AppDrawer(private val mainActivity: AppCompatActivity, private val toolbar
 
     fun disableDrawer() {
         mDrawer.actionBarDrawerToggle?.isDrawerIndicatorEnabled = false
-        mainActivity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        APP_ACTIVITY.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
-        toolbar.setNavigationOnClickListener {
-            mainActivity.supportFragmentManager.popBackStack()
+        APP_ACTIVITY.mToolbar.setNavigationOnClickListener {
+            APP_ACTIVITY.supportFragmentManager.popBackStack()
         }
     }
 
     fun enableDrawer() {
-        mainActivity.supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        APP_ACTIVITY.supportActionBar?.setDisplayHomeAsUpEnabled(false)
         mDrawer.actionBarDrawerToggle?.isDrawerIndicatorEnabled = true
         mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
-        toolbar.setNavigationOnClickListener {
+        APP_ACTIVITY.mToolbar.setNavigationOnClickListener {
             mDrawer.openDrawer()
         }
     }
 
     private fun createDrawer() {
         mDrawer = DrawerBuilder()
-            .withActivity(mainActivity)
-            .withToolbar(toolbar)
+            .withActivity(APP_ACTIVITY)
+            .withToolbar(APP_ACTIVITY.mToolbar)
             .withActionBarDrawerToggle(true)
             .withSelectedItem(-1)
             .withAccountHeader(mHeader)
@@ -130,17 +129,24 @@ class AppDrawer(private val mainActivity: AppCompatActivity, private val toolbar
             )
             .withOnDrawerItemClickListener(object: Drawer.OnDrawerItemClickListener {
                 override fun onItemClick(view: View?, position: Int, drawerItem: IDrawerItem<*>): Boolean {
-                    Toast.makeText(mainActivity, position.toString(), Toast.LENGTH_SHORT).show()
-                    when(position) {
-                        7 -> {
-                            mainActivity.replaceFragment(SettingsFragment())
-
-                        }
-                    }
+                    Toast.makeText(APP_ACTIVITY, position.toString(), Toast.LENGTH_SHORT).show()
+                    clickToItem(position)
                     return false
                 }
             })
             .build()
+    }
+
+    private fun clickToItem(position: Int) {
+        when(position) {
+            4 -> {
+                APP_ACTIVITY.replaceFragment(ContactsFragment())
+            }
+            7 -> {
+                APP_ACTIVITY.replaceFragment(SettingsFragment())
+
+            }
+        }
     }
 
     private fun createHeader() {
@@ -150,7 +156,7 @@ class AppDrawer(private val mainActivity: AppCompatActivity, private val toolbar
             .withIcon(USER.photoUrl)
             .withIdentifier(200)
         mHeader = AccountHeaderBuilder()
-            .withActivity(mainActivity)
+            .withActivity(APP_ACTIVITY)
             .withHeaderBackground(R.drawable.header)
             .addProfiles(
                 mCurrentProfile
