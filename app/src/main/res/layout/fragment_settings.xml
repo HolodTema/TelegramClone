@@ -20,7 +20,7 @@
             android:layout_height="@dimen/settings_photo_user_height"
             android:src="@drawable/default_user_photo"
             app:civ_border_width="@dimen/settings_photo_user_border"
-            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginStart="@dimen/app_margin"
             app:civ_circle_background_color="?attr/colorSecondary"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -34,8 +34,8 @@
             app:layout_constraintStart_toEndOf="@id/photoSettingsUser"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/photoSettingsUser"
-            android:layout_marginTop="@dimen/vertical_margin"
-            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginTop="@dimen/app_small_margin"
+            android:layout_marginStart="@dimen/app_margin"
             android:textSize="@dimen/text_normal"/>
 
         <TextView
@@ -47,7 +47,7 @@
             app:layout_constraintStart_toEndOf="@id/photoSettingsUser"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textSettingsFullName"
-            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginStart="@dimen/app_margin"
             android:textSize="@dimen/text_small"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:textColor="?attr/colorPrimary"
         android:text="@string/account"
-        android:layout_marginStart="@dimen/horizontal_margin"
+        android:layout_marginStart="@dimen/app_margin"
         android:textSize="@dimen/text_small"
         android:textStyle="bold"
         android:layout_marginTop="@dimen/vertical_large_margin"
@@ -160,7 +160,7 @@
         app:civ_circle_background_color="?attr/colorOnPrimary"
         android:elevation="4dp"
         app:civ_border_color="?attr/colorOnPrimaryDark"
-        android:layout_marginEnd="@dimen/horizontal_margin"
+        android:layout_marginEnd="@dimen/app_margin"
         app:layout_constraintBottom_toBottomOf="@+id/constraintSettingsHeader"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintSettingsHeader" />

@@ -4,7 +4,7 @@
     <style name="button_settings">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">@dimen/vertical_margin</item>
+        <item name="android:layout_marginTop">@dimen/app_small_margin</item>
         <item name="android:paddingTop">@dimen/vertical_padding</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
@@ -16,7 +16,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">?attr/colorOnSecondary</item>
         <item name="android:textSize">@dimen/text_normal</item>
-        <item name="android:layout_marginStart">@dimen/horizontal_margin</item>
+        <item name="android:layout_marginStart">@dimen/app_margin</item>
     </style>
 
     <style name="text_small">
@@ -24,16 +24,16 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">?attr/colorGrey</item>
         <item name="android:textSize">@dimen/text_small</item>
-        <item name="android:layout_marginStart">@dimen/horizontal_margin</item>
+        <item name="android:layout_marginStart">@dimen/app_margin</item>
     </style>
 
     <style name="separator">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
         <item name="android:background">?attr/colorGrey</item>
-        <item name="android:layout_marginTop">@dimen/vertical_margin</item>
-        <item name="android:layout_marginStart">@dimen/horizontal_margin</item>
-        <item name="android:layout_marginEnd">@dimen/horizontal_margin</item>
+        <item name="android:layout_marginTop">@dimen/app_small_margin</item>
+        <item name="android:layout_marginStart">@dimen/app_margin</item>
+        <item name="android:layout_marginEnd">@dimen/app_margin</item>
     </style>
 
     <style name="toolbar_main">
@@ -50,9 +50,9 @@
         <item name="android:textColor">?attr/colorOnSecondary</item>
         <item name="android:textSize">@dimen/text_normal</item>
         <item name="android:maxLines">1</item>
-        <item name="android:layout_marginStart">@dimen/horizontal_margin</item>
-        <item name="android:layout_marginEnd">@dimen/horizontal_margin</item>
-        <item name="android:layout_marginTop">@dimen/vertical_margin</item>
+        <item name="android:layout_marginStart">@dimen/app_margin</item>
+        <item name="android:layout_marginEnd">@dimen/app_margin</item>
+        <item name="android:layout_marginTop">@dimen/app_small_margin</item>
         <item name="android:padding">@dimen/appPadding</item>
         <item name="android:inputType">phone</item>
         <item name="android:backgroundTint">?attr/colorPrimary</item>

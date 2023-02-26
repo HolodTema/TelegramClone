@@ -8,6 +8,9 @@
     <color name="colorSecondaryVariantLight">#00655C</color>
     <color name="colorOnSecondaryLight">#000000</color>
     <color name="colorGreyLight">#6C6C6C</color>
+    <color name="colorGreenLight">#9ACA7C</color>
+    <color name="colorOnReceivedMessageLight">#FFFF</color>
+
 
     <color name="colorPrimaryDark">#0088cc</color>
     <color name="colorPrimaryVariantDark">#006A9F</color>
